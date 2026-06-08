@@ -516,6 +516,86 @@ footer{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padd
   .about-left{width:100%;height:auto}
   .about-right{width:100%}
 }
+  @media (max-width: 900px) {
+
+  .reach-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .reach-tagline {
+    max-width: 100%;
+  }
+
+  .reach-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 cards per row */
+  }
+
+  .rc-address {
+    grid-column: span 2; /* ✅ full width */
+  }
+
+}
+@media (max-width: 600px) {
+
+  .reach-inner {
+    padding: 20px;
+  }
+
+  .reach-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .reach-grid {
+    grid-template-columns: 1fr; /* ✅ stack all cards */
+    gap: 16px;
+  }
+
+  .rc {
+    padding: 18px;
+  }
+
+  /* ✅ Address card full width */
+  .rc-address {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+
+  /* ✅ Icon + label spacing fix */
+  .rc-icon-row {
+    margin-bottom: 10px;
+  }
+
+  /* ✅ Address layout mobile */
+  .rc-address-icon-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .address-vline {
+    display: none; /* remove vertical line on mobile */
+  }
+
+  /* ✅ Text sizes */
+  .rc-value-large {
+    font-size: 16px;
+  }
+
+  /* ✅ CTA buttons stacked */
+  .reach-cta-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-reach-pri,
+  .btn-reach-ghost {
+    width: 100%;
+    text-align: center;
+  }
+
+}
 </style>
 </head>
 <body>
