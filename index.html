@@ -383,6 +383,12 @@ footer{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padd
   gap: 40px;
 }
 
+@media (max-width: 600px) {
+  .rc-address {
+    grid-column: span 1; /* ✅ mobile fix */
+  }
+}
+
 .rc-address-icon-col {
   display: flex;
   flex-direction: column;
@@ -539,7 +545,7 @@ footer{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padd
 @media (max-width: 600px) {
 
   .reach-inner {
-    padding: 20px;
+    padding: 16px;
   }
 
   .reach-title {
@@ -548,12 +554,17 @@ footer{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padd
   }
 
   .reach-grid {
-    grid-template-columns: 1fr; /* ✅ stack all cards */
+    display: grid;
+    grid-template-columns: 1fr !important;  /* ✅ force 1 column */
     gap: 16px;
+
   }
 
   .rc {
-    padding: 18px;
+
+  width: 100%;
+  box-sizing: border-box; /* ✅ prevents overflow */
+
   }
 
   /* ✅ Address card full width */
@@ -580,7 +591,9 @@ footer{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padd
 
   /* ✅ Text sizes */
   .rc-value-large {
-    font-size: 16px;
+   word-break: break-word;
+  line-height: 1.4;
+
   }
 
   /* ✅ CTA buttons stacked */
@@ -868,7 +881,7 @@ footer{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padd
       </div>
 
       <!-- Address — full width -->
-      <div class="rc rc-address" style="grid-column: span 2;">
+      <div class="rc rc-address">
         <div class="rc-address-icon-col">
           <div class="address-pin">
             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
